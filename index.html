@@ -1,1 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fronteiras em Chamas: Conflitos e Território</title>
+    <style>
+        :root {
+            --cor-fundo: #121212;
+            --cor-card: #1e1e1e;
+            --cor-texto: #e0e0e0;
+            --cor-destaque: #e65100; /* Laranja queimado */
+            --cor-borda: #333333;
+        }
 
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('https://via.placeholder.com/1200x400') no-repeat center center/cover;
+            text-align: center;
+            padding: 80px 20px;
+            border-bottom: 3px solid var(--cor-destaque);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: #b0b0b0;
+            max-width: 600px;
+            margin: 20px auto 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #0a0a0a;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--cor-borda);
+        }
+
+        nav a {
+            color: var(--cor-texto);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--cor-destaque);
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            color: var(--cor-destaque);
+            font-size: 2rem;
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--cor-borda);
+            padding-bottom: 10px;
+        }
+
+        .grid-conflitos {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        @media (max-width: 768px) {
+            .grid-conflitos {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card {
+            background-color: var(--cor-card);
+            border: 1px solid var(--cor-borda);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--cor-destaque);
+        }
+
+        .card-conteudo {
+            padding: 25px;
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: #ffffff;
+            font-size: 1.5rem;
+        }
+
+        .btn-interativo {
+            display: inline-block;
+            background-color: var(--cor-destaque);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
