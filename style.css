@@ -1,0 +1,121 @@
+/* ==========================================================================
+   1. CONFIGURAÇÕES GERAIS E VARIÁVEIS
+   ========================================================================== */
+:root {
+    --fundo-principal: #0d0d0d;       /* Preto profundo */
+    --fundo-card: #1a1a1a;            /* Preto um pouco mais claro para contraste */
+    --cor-fonte: #4a4a4a;             /* Grafite */
+    --cor-fonte-clara: #8c8c8c;       /* Grafite claro para melhor leitura em fundos escuros */
+    --cor-botao: #262626;             /* Botão grafite escuro */
+    --cor-botao-hover: #333333;       /* Efeito hover do botão */
+    --transicao-suave: all 0.4s ease-in-out;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--fundo-principal);
+    /* Substitua 'sua-imagem-aqui.jpg' pelo caminho real das suas imagens */
+    background-image: url('araucarias-gralhas.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: var(--cor-fonte-clara);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    /* Transição suave ao carregar/mudar a tela */
+    opacity: 0;
+    animation: fadeIn Tela 1s ease-in-out forwards;
+}
+
+/* Animação para a transição suave da tela */
+@keyframes fadeInTela {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   2. BOTÕES DE CATEGORIA
+   ========================================================================== */
+.container-categorias {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.btn-categoria {
+    background-color: var(--cor-botao);
+    color: var(--cor-fonte-clara);
+    border: 1px solid var(--cor-fonte);
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    
+    /* Transição suave para o efeito do botão */
+    transition: var(--transicao-suave);
+}
+
+/* Efeito ao passar o mouse pelos botões */
+.btn-categoria:hover {
+    background-color: var(--cor-botao-hover);
+    color: #ffffff; /* Destaca o texto em branco no hover */
+    border-color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+}
+
+/* ==========================================================================
+   3. RESPONSIVIDADE (MEDIA QUERIES)
+   ========================================================================== */
+
+/* --- TELA DE COMPUTADOR (Telas grandes) --- */
+@media (min-width: 1025px) {
+    body {
+        font-size: 16px;
+    }
+    .container-categorias {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+/* --- TELA DE TABLET (Telas médias) --- */
+@media (max-width: 1024px) and (min-width: 768px) {
+    body {
+        font-size: 15px;
+        background-attachment: scroll; /* Melhora a performance em tablets */
+    }
+    .btn-categoria {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+    }
+}
+
+/* --- TELA DE CELULAR (Telas pequenas) --- */
+@media (max-width: 767px) {
+    body {
+        font-size: 14px;
+        background-attachment: scroll; /* Melhora a performance em celulares */
+    }
+    .container-categorias {
+        flex-direction: column; /* Botões ficam um abaixo do outro no celular */
+        align-items: stretch;
+        padding: 15px;
+    }
+    .btn-categoria {
+        padding: 14px; /* Área de toque maior para os dedos */
+        text-align: center;
+        font-size: 0.9rem;
+    }
+}
